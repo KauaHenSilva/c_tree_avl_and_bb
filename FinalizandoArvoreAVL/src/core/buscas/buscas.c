@@ -50,13 +50,9 @@ static void _mostarDisciplinasDeUmAluno(Arvore *raizMatriculasAluno, Arvore *rai
 {
   if (raizDisciplina)
   {
-    if (raizMatriculasAluno->info.matricula.codigo == raizDisciplina->info.matricula.codigo)
-      showDisciplina(raizDisciplina->info);
-
-    else if (raizMatriculasAluno->info.matricula.codigo < raizDisciplina->info.matricula.codigo)
-      _mostarDisciplinasDeUmAluno(raizMatriculasAluno, raizDisciplina->esq);
-    else
-      _mostarDisciplinasDeUmAluno(raizMatriculasAluno, raizDisciplina->dir);
+    showDisciplina(raizDisciplina->info);
+    _mostarDisciplinasDeUmAluno(raizMatriculasAluno, raizDisciplina->esq);
+    _mostarDisciplinasDeUmAluno(raizMatriculasAluno, raizDisciplina->dir);
   }
 }
 
@@ -66,7 +62,6 @@ void mostrarDisciplinasDeUmAluno(Arvore *raizMatriculasAluno, Arvore *raizDiscip
   {
     if (raizMatriculasAluno->info.matricula.codigo == raizDisciplina->info.disciplina.codigo)
       _mostarDisciplinasDeUmAluno(raizMatriculasAluno, raizDisciplina);
-
     else if (raizMatriculasAluno->info.matricula.codigo < raizDisciplina->info.disciplina.codigo)
       mostrarDisciplinasDeUmAluno(raizMatriculasAluno->esq, raizDisciplina);
     else

@@ -138,6 +138,7 @@ void initMenu(ListAluno *alunos, Arvore *arvoreCursos)
           printf("Curso do aluno não encontrado\n");
         else if (!arvoreCursoAtual->info.curso.arvoreDisciplinas)
           printf("Curso sem disciplinas\n");
+        // A linha abaixo está com erro, em vez de nota e pata verificar se aluno tem disciplina.
         else if (!(arvoreNotas = alunoAtual->aluno.arvoreNota))
           printf("Aluno sem notas\n");
         else
