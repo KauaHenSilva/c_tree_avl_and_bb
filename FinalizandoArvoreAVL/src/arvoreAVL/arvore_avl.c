@@ -9,6 +9,8 @@ static int altura(Arvore *raiz)
   {
     int alturaEsq = altura(raiz->esq);
     int alturaDir = altura(raiz->dir);
+    // FeedBack da professora: Não faça oque foi feito na linha 14.
+    // Pega a variavel tamanho que está na estrutura da arvore avl! Outra coisa, cuidado com a usabilidade!
     alturaAtual = ((alturaEsq > alturaDir) ? alturaEsq : alturaDir) + 1;
   }
 
